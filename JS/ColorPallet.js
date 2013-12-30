@@ -81,8 +81,8 @@ function PropertySelectionChanged(){
 //handles color selection in canvas
 function HighlightSelectedColor(e){
     var divAlphabets = document.getElementById("divEyeTestingScreen");
-    var x = e.clientX - this.offsetLeft;
-    var y = e.clientY - this.offsetTop;
+    var x = e.clientX - this.offsetLeft + document.documentElement.scrollLeft; //note document.body.scrollLeft doesnt work in IE or Firefox
+    var y = e.clientY - this.offsetTop + document.documentElement.scrollTop;
     var selectedColorIndex = GetIndexOfColor(x,y);
     if(SelectedProperty == 0)
     {
