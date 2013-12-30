@@ -81,8 +81,8 @@ function PropertySelectionChanged(){
 //handles color selection in canvas
 function HighlightSelectedColor(e){
     var divAlphabets = document.getElementById("divEyeTestingScreen");
-    var x = e.x - this.offsetLeft;
-    var y = e.y - this.offsetTop;
+    var x = e.clientX - this.offsetLeft;
+    var y = e.clientY - this.offsetTop;
     var selectedColorIndex = GetIndexOfColor(x,y);
     if(SelectedProperty == 0)
     {
@@ -94,7 +94,6 @@ function HighlightSelectedColor(e){
         SelectedBackColorIndex = selectedColorIndex;
         SetBgColor(divAlphabets,ColorPaletteItems[SelectedBackColorIndex].color);
     }
-    
     if(SelectedProperty !== -1)
         HighlightColor(selectedColorIndex);
 }
