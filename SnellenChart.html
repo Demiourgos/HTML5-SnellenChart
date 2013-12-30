@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Virtual Eye Test - Snellen Chart</title>
+<link rel="stylesheet" href="CSS/ResponsiveUI.css" type="text/css" />
+</head>
+<body id="body">
+    <div class="inputContainer">
+        <div class="propertyContainer">
+            <div data-role="header">Property</div>
+            <select id="propertySelector">
+                <option value="-1">Select Property</option>
+                <option value="0">Forecolor</option>
+                <option value="1">Backcolor</option>
+            </select>
+        </div>
+        <div class="lineContainer">
+            <div>Number of lines</div>
+            <input type="text" id="numberOfLines" value="6" />
+        </div>
+    </div>
+    <div class="mainContent">
+        <div class="leftPane">
+            <canvas id="colorPalette" width="400" height="400"></canvas>
+        </div>
+        <div class="rightPane">
+            <div id="divEyeTestingScreen" class="snellenChart"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="JS/ColorPallet.js"></script>
+</body>
+</html>
