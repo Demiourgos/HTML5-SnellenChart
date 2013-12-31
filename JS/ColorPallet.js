@@ -81,8 +81,20 @@ function PropertySelectionChanged(){
 //handles color selection in canvas
 function HighlightSelectedColor(e){
     var divAlphabets = document.getElementById("divEyeTestingScreen");
-    var x = e.clientX - this.offsetLeft + document.documentElement.scrollLeft; //note document.body.scrollLeft doesnt work in IE or Firefox
-    var y = e.clientY - this.offsetTop + document.documentElement.scrollTop;
+    var scrollLeft = 0;
+    var scrollTop = 0;
+    if(navigator.userAgent.indexOf('Chrome') != -1)
+    {
+        scrollLeft = document.body.scrollLeft;
+        scrollTop = document.body.scrollTop;
+    }
+    else
+    {
+        scrollLeft = document.documentElement.scrollLeft;
+        scrollTop = document.documentElement.scrollTop;
+    }
+    var x = e.clientX - this.offsetLeft + scrollLeft; //note document.body.scrollLeft doesnt work in IE or Firefox
+    var y = e.clientY - this.offsetTop + scrollTop;
     var selectedColorIndex = GetIndexOfColor(x,y);
     if(SelectedProperty == 0)
     {
@@ -189,8 +201,8 @@ function GenerateUniqueColors(){
     var g = 0; //green
     var b = 0; //blue
     var count = 2;
-    UniqueColors[0] = new RGBColor(255,255,255);
-    UniqueColors[1] = new RGBColor(0,0,0);
+    UniqueColors["255255255"] = new RGBColor(255,255,255);
+    UniqueColors["000000000"] = new RGBColor(0,0,0);
     while(count < NUMBER_OF_COLORS) {
         r = Math.floor(255 * Math.random());
         g = Math.floor(255 * Math.random());
