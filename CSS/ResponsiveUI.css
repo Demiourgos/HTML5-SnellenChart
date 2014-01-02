@@ -1,6 +1,5 @@
 body{
     font-size:100%;
-    line-height:1;
     display:block;
     background:white;
     font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
@@ -9,7 +8,7 @@ body{
 .inputContainer{
     width:80%;
     margin:0 auto;
-    padding: 20px 0px;
+    padding: 20px 0;
 }
 
 .propertyContainer{
@@ -104,7 +103,7 @@ select::-ms-expand {
         width:60%;
         clear:both;
         margin-top:20px;
-        padding: 0px;
+        padding: 0;
     }
     
     .rightPane{
